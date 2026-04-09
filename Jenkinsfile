@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: "${env.BRANCH_NAME}", url: 'https://github.com/2kita9/cicd-jenkins-pipeline-task'
+                git branch: "${env.BRANCH_NAME}", url: 'https://github.com/2kita9/cicd-jenkins-pipeline-task.git'
             }
         }
 
