@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: "${env.BRANCH_NAME}", url: 'https://github.com/shreyashedge01/jenkins-app.git'
+                git branch: "${env.BRANCH_NAME}", url: 'https://github.com/2kita9/cicd-jenkins-pipeline-task.git'
             }
         }
 
@@ -19,9 +19,9 @@ pipeline {
             steps {
                 script {
                     if (env.BRANCH_NAME == 'main') {
-                        bat 'echo Running MAIN branch on port 3000'
+                        sh 'echo Running MAIN branch on port 3000'
                     } else {
-                        bat 'echo Running DEV branch on port 3001'
+                        sh 'echo Running DEV branch on port 3001'
                     }
                 }
             }
