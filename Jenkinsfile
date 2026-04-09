@@ -25,9 +25,9 @@ pipeline {
             steps {
                 script {
                     if (env.BRANCH_NAME == 'main') {
-                        bat 'docker build -t myapp:main .'
+                        sh 'docker build -t myapp:main .'
                     } else {
-                        bat 'docker build -t myapp:dev .'
+                        sh 'docker build -t myapp:dev .'
                     }
                 }
             }
@@ -37,9 +37,9 @@ pipeline {
             steps {
                 script {
                     if (env.BRANCH_NAME == 'main') {
-                        bat 'echo Deploying MAIN on port 3000'
+                        sh 'echo Deploying MAIN on port 3000'
                     } else {
-                        bat 'echo Deploying DEV on port 3001'
+                        sh 'echo Deploying DEV on port 3001'
                     }
                 }
             }
